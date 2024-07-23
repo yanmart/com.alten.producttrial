@@ -1,0 +1,12 @@
+server:
+  port: 4300
+
+spring:
+  application:
+    name: producttrial
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
