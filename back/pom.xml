@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.alten</groupId>
-	<artifactId>producttrial-OLD</artifactId>
+	<artifactId>producttrial</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>com.alten.producttrial</name>
-	<description>Demo project for Spring Boot</description>
+	<description></description>
 	<url/>
 	<licenses>
 		<license/>
@@ -49,6 +49,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
 	</dependencies>
 
 	<build>
