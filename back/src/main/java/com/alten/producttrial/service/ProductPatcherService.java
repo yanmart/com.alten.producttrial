@@ -3,9 +3,9 @@ package com.alten.producttrial.service;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
-import com.alten.producttrial.model.Category;
-import com.alten.producttrial.model.InventoryStatus;
-import com.alten.producttrial.model.Product;
+import com.alten.producttrial.entity.Category;
+import com.alten.producttrial.entity.InventoryStatus;
+import com.alten.producttrial.entity.Product;
 
 @Service
 public class ProductPatcherService 

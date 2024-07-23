@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: producttrial
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+      poolName: HikariPoolZZZ
 
 management:
   endpoints:

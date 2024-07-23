@@ -1,4 +1,4 @@
-package com.alten.producttrial.model;
+package com.alten.producttrial.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

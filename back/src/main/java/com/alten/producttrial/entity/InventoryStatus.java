@@ -1,4 +1,4 @@
-package com.alten.producttrial.model;
+package com.alten.producttrial.entity;
 
 public enum InventoryStatus 
 {

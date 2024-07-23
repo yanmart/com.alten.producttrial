@@ -1,11 +1,14 @@
 package com.alten.producttrial.service.v1;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.alten.producttrial.model.Product;
+import com.alten.producttrial.entity.Product;
 import com.alten.producttrial.service.ProductPatcherService;
+import com.alten.producttrial.service.ProductRepositoryService;
 
 import lombok.AllArgsConstructor;
 
@@ -14,34 +17,39 @@ import lombok.AllArgsConstructor;
 public class ProductRestControllerService 
 {
 	private ProductPatcherService productPatcherService; 
-	private List<Product> productList;
+	private ProductRepositoryService productRepositoryService;
 	
 	public void createNewProduct(Product product) 
 	{
-		productList.add(product);
+		productRepositoryService.save(product);
 	}
 
 	public List<Product> getProducts() 
 	{
-		return productList;
+		return productRepositoryService.findAll();
 	}
 	
-	public Product getProduct(int id)
+	public Optional<Product> getProduct(int id)
 	{
-		return productList.stream().filter(product -> product.getId() == id).findAny().orElse(null);
+		return productRepositoryService.findById(id);
 	}
 
 	public void removeProduct(int id) 
 	{
-		Product product = getProduct(id);
-		
-		productList.remove(product);
+		productRepositoryService.deleteById(id);
 	}
 
-	public void patchProduct(int id,  Product product)
+	public void patchProduct(int id,  Product product) throws NotFoundException
 	{
-		Product productToUpdate = getProduct(id);
+		Optional<Product> productOptional = getProduct(id);
+		if ( productOptional.isEmpty() )
+		{
+			 throw new NotFoundException();
+		}
+		
+		Product productToUpdate = productOptional.get();
 		productPatcherService.patchProduct(productToUpdate, product);
+		productRepositoryService.save(productToUpdate);
 	}
 
 	
