@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "119c9048-4d5f-465e-bfb1-aad08444cd59",
+		"name": "Test Alten Product Trial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10993854"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Products ( code=f230fh4f5 )",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1030,\r\n        \"code\": \"f230fh4f5\",\r\n        \"name\": \"Bamboo Watch 2\",\r\n        \"description\": \"Product Description 2\",\r\n        \"image\": \"bamboo-watch.jpg\",\r\n        \"price\": 65,\r\n        \"category\": \"Accessories\",\r\n        \"quantity\": 22,\r\n        \"inventoryStatus\": \"INSTOCK\",\r\n        \"rating\": 5\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Products ( code=f230fg5j6)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1031,\r\n        \"code\": \"f230fg5j6\",\r\n        \"name\": \"Bamboo Watch 3\",\r\n        \"description\": \"Product Description 3\",\r\n        \"image\": \"bamboo-watch.jpg\",\r\n        \"price\": 50,\r\n        \"category\": \"Accessories\",\r\n        \"quantity\": 30,\r\n        \"inventoryStatus\": \"INSTOCK\",\r\n        \"rating\": 6\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id ( id = 1 )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id ( id = 2 )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id ( id = 30 )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id ( id = 31 )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id ( id = 32)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/32",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product By Id ( id = 31 )",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Product By Id ( id = 31 )",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bamboo Watch NEW\",\r\n    \"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Product By Id ( id = 32 ) Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bamboo Watch NEW\",\r\n    \"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4300/api/v1/products/32",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"32"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

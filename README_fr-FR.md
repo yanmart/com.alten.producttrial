@@ -48,3 +48,28 @@ Dans la mesure du possible, l'application doit pouvoir être lancée, base de do
 
  - Vous pouvez ajouter des tests Postman ou Swagger pour valider votre API
  - Vous pouvez adapter le front-end pour qu'il puisse se connecter à votre API
+ 
+ 
+# Mise a jour pour la solution Back-end
+
+### Informations
+
+- la technologie est Java/Spring Boot
+- la base de donnée est h2 en memoire
+- la liste des produits `front/assets/products.json` a été ajouté dans le backend pour populer la base de donnée au démarrage du backend
+- le fichier des tests Postman est `Test Alten Product Trial.postman_collection.json` , il se trouve à la racine du projet.
+- le frontend a été modifié pour qu'il puisse se connecter au backend.
+
+### lancement du backend
+
+Se mettre à la racine du backend ( com.alten.producttrial/back )
+
+Exécuter la commande suivante
+
+``` bash
+mvn spring-boot:run
+```
+   
+
+
+ 

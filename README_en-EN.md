@@ -43,3 +43,23 @@ you can run the angular frontend with the command 'ng serve'
 
 - You can add Postman or Swagger tests to validate your API
 - You can adapt the frontend so that it can connect to your API.
+
+# Update for Back-end solution
+
+### Informations
+
+- the technology is Java/Spring Boot
+- the database is H2 in memory
+- list of products `front/assets/products.json` has been added in backend to populate the database when backend starts
+- Postman tests file is `Test Alten Product Trial.postman_collection.json` , it is at the root of the project.
+- the frontend has been adapted so that it can connect to the backend.
+
+### backend start
+
+Go to the root of backend ( com.alten.producttrial/back )
+
+launch the following command
+
+``` bash
+mvn spring-boot:run
+```
