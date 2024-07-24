@@ -3,6 +3,8 @@ package com.alten.producttrial.restcontroller.v1;
 import java.util.Optional;
 
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,9 +30,9 @@ public class ProductRestController
 	private ProductRestControllerService productRestControllerService;
 	
 	@PostMapping
-	public void createNewProduct( @RequestBody Product product )
+	public Product createNewProduct( @RequestBody Product product )
 	{
-		productRestControllerService.createNewProduct(product);
+		return productRestControllerService.createNewProduct(product);
 	}
 	
 	@GetMapping
@@ -52,9 +54,21 @@ public class ProductRestController
 	}
 	
 	@PatchMapping(path="/{id}")
-	public void updateProduct( @PathVariable int id , @RequestBody Product product ) throws NotFoundException
+	public ResponseEntity<Product> updateProduct( @PathVariable int id , @RequestBody Product product )
 	{
-		productRestControllerService.patchProduct(id , product);
+		ResponseEntity<Product> result;
+		try 
+		{
+			Product productUpdated = productRestControllerService.patchProduct(id , product);
+			result = new ResponseEntity<>(productUpdated,HttpStatus.OK);
+		}
+		catch (NotFoundException e) 
+		{
+			result = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+		return result;
+		 
 	}
 	
 	

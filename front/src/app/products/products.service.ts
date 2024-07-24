@@ -36,7 +36,7 @@ export class ProductsService {
     	
     	this.http.post<Product>(ProductsService.productUrl,prod).subscribe(data =>
     	{
-    		ProductsService.productslist.push(prod);
+    		ProductsService.productslist.push(data);
             this.products$.next(ProductsService.productslist);
     	});
         
@@ -50,17 +50,17 @@ export class ProductsService {
     	this.http.patch<Product>(url,prod).subscribe(data =>
     	{
     		ProductsService.productslist.forEach(element => {
-                if(element.id == prod.id)
+                if(element.id == data.id)
                 {
-                    element.name = prod.name;
-                    element.category = prod.category;
-                    element.code = prod.code;
-                    element.description = prod.description;
-                    element.image = prod.image;
-                    element.inventoryStatus = prod.inventoryStatus;
-                    element.price = prod.price;
-                    element.quantity = prod.quantity;
-                    element.rating = prod.rating;
+                    element.name = data.name;
+                    element.category = data.category;
+                    element.code = data.code;
+                    element.description = data.description;
+                    element.image = data.image;
+                    element.inventoryStatus = data.inventoryStatus;
+                    element.price = data.price;
+                    element.quantity = data.quantity;
+                    element.rating = data.rating;
                 }
             });
             this.products$.next(ProductsService.productslist);
@@ -77,6 +77,7 @@ export class ProductsService {
     	const url: string = ProductsService.productUrl+"/"+id;
     	this.http.delete<Product>(url).subscribe(data =>
     	{
+    		console.log(data);
     		ProductsService.productslist = ProductsService.productslist.filter(value => { return value.id !== id } );
             this.products$.next(ProductsService.productslist);
     	});

@@ -19,9 +19,9 @@ public class ProductRestControllerService
 	private ProductPatcherService productPatcherService; 
 	private ProductRepositoryService productRepositoryService;
 	
-	public void createNewProduct(Product product) 
+	public Product createNewProduct(Product product) 
 	{
-		productRepositoryService.save(product);
+		return productRepositoryService.save(product);
 	}
 
 	public List<Product> getProducts() 
@@ -39,7 +39,7 @@ public class ProductRestControllerService
 		productRepositoryService.deleteById(id);
 	}
 
-	public void patchProduct(int id,  Product product) throws NotFoundException
+	public Product patchProduct(int id,  Product product) throws NotFoundException
 	{
 		Optional<Product> productOptional = getProduct(id);
 		if ( productOptional.isEmpty() )
@@ -50,6 +50,7 @@ public class ProductRestControllerService
 		Product productToUpdate = productOptional.get();
 		productPatcherService.patchProduct(productToUpdate, product);
 		productRepositoryService.save(productToUpdate);
+		return productToUpdate;
 	}
 
 	
