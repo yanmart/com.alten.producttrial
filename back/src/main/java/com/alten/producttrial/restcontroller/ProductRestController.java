@@ -1,4 +1,4 @@
-package com.alten.producttrial.restcontroller.v1;
+package com.alten.producttrial.restcontroller;
 
 import java.util.Optional;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alten.producttrial.entity.Product;
-import com.alten.producttrial.response.v1.GetProductsResponse;
-import com.alten.producttrial.service.v1.ProductRestControllerService;
+import com.alten.producttrial.response.GetProductsResponse;
+import com.alten.producttrial.service.ProductRestControllerService;
 
 import lombok.AllArgsConstructor;
 

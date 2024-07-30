@@ -1,4 +1,4 @@
-package com.alten.producttrial.response.v1;
+package com.alten.producttrial.response;
 
 import java.util.List;
 

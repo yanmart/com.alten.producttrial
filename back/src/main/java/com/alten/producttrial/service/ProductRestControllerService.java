@@ -1,4 +1,4 @@
-package com.alten.producttrial.service.v1;
+package com.alten.producttrial.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,7 @@ import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.alten.producttrial.entity.Product;
-import com.alten.producttrial.service.ProductPatcherService;
-import com.alten.producttrial.service.ProductRepositoryService;
+import com.alten.producttrial.mapper.ProductMapper;
 
 import lombok.AllArgsConstructor;
 
@@ -16,8 +15,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ProductRestControllerService 
 {
-	private ProductPatcherService productPatcherService; 
 	private ProductRepositoryService productRepositoryService;
+	private ProductMapper mapper;
 	
 	public Product createNewProduct(Product product) 
 	{
@@ -48,8 +47,11 @@ public class ProductRestControllerService
 		}
 		
 		Product productToUpdate = productOptional.get();
-		productPatcherService.patchProduct(productToUpdate, product);
+		
+		mapper.update(productToUpdate, product);
+		
 		productRepositoryService.save(productToUpdate);
+		
 		return productToUpdate;
 	}
 

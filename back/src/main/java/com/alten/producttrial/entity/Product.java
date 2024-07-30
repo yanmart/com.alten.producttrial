@@ -22,10 +22,10 @@ public class Product
 	private String code;
 	private String name;
 	private String description;
-	private int price;
-	private int quantity;
+	private Integer price;
+	private Integer quantity;
 	private InventoryStatus inventoryStatus;
 	private Category category;
 	private String image;
-	private int rating;
+	private Integer rating;
 }
